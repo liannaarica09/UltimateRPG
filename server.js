@@ -5,11 +5,13 @@ const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT || 3001;
 const cors = require('cors');
-var fs = require('file-system');
+// var fs = require('file-system');
 const Schema = mongoose.Schema;
 
+//midleware
 app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
 app.use(bodyParser.json({ limit: "50mb" }));
+
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
     app.use(express.static("client/build"));
