@@ -14,6 +14,18 @@ class Login extends React.Component {
         redirectPath: ''
     }
 
+    toggleStateOnSelection = (event, selection) => {
+        if (event) event.preventDefault();
+        this.setState({
+            currentSelection: selection,
+            password: '',
+            email: '',
+            userName: '',
+            confirmPassword: '',
+            rememberMe: false
+        })
+    }
+
     getDisplayStyle = (formType) => {
         if (this.state.currentSelection === formType) {
             return { display: '' };
@@ -29,16 +41,27 @@ class Login extends React.Component {
         });
     }
 
-    toggleStateOnSelection = (event, selection) => {
-        if (event) event.preventDefault();
-        this.setState({
-            currentSelection: selection,
-            password: '',
-            email: '',
-            userName: '',
-            confirmPassword: '',
-            rememberMe: false
+    handleLoginSubmit = (event) => {
+        event.preventDefault();
+        console.log(this.state.userName)
+        axios.post('/api/auth/login', {
+            username: this.state.userName,
+            password: this.state.password
+        }).then(res => {
+            console.log(res.data);
+            localStorage.setItem("userName", res.data.userName);
+            localStorage.setItem("token", res.data.token);
+            console.log(localStorage.getItem("userName"))
+            this.setRedirect('play');
         })
+    }
+
+    validateLoginForm = () => {
+        return this.state.userName.length > 0 && this.state.password.length > 0;
+    }
+
+    validateRegisterForm = () => {
+        return this.state.email.length > 0 && this.state.password.length > 0 && this.state.userName.length > 0 && this.state.bio.length > 0 && (this.state.password === this.state.confirmPassword);
     }
 
     showPasswordConfirmationAlert = () => {
@@ -73,21 +96,6 @@ class Login extends React.Component {
         this.toggleStateOnSelection(null, 'login')
     }
 
-    handleLoginSubmit = (event) => {
-        event.preventDefault();
-        console.log(this.state.userName)
-        axios.post('/api/auth/login', {
-            username: this.state.userName,
-            password: this.state.password
-        }).then(res => {
-            console.log(res.data);
-            localStorage.setItem("userName", res.data.userName);
-            localStorage.setItem("token", res.data.token);
-            console.log(localStorage.getItem("userName"))
-            this.setRedirect('play');
-        })
-    }
-
     render() {
         if (this.state.redirect) {
             return <Redirect to={this.state.redirectPath} />
@@ -95,7 +103,7 @@ class Login extends React.Component {
 
         return (
             <div id="loginCentered">
-                <div>
+                <div className="double">
                     <div onClick={(e) => this.toggleStateOnSelection(e, 'login')} id="login-form-link">Login</div>
                     <div onClick={(e) => this.toggleStateOnSelection(e, 'register')} id="register-form-link">Register</div>
                 </div>

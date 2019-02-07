@@ -1,6 +1,8 @@
 import React from "react";
 import Login from "../../components/Login";
 import { Redirect } from "react-router-dom";
+import './LoginPage.css';
+
 
 class LoginPage extends React.Component {
     state = {
@@ -26,7 +28,9 @@ class LoginPage extends React.Component {
         return (
             <React.Fragment>
                 <div id="loginDiv">
+                    <div></div>
                     <Login />
+                    <div></div>
                 </div>
             </React.Fragment>
         )
