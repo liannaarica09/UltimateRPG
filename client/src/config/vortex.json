@@ -1,0 +1,998 @@
+{
+    "Attributes": [{
+            "name": "awareness",
+            "value": 1
+        }, {
+            "name": "coordination",
+            "value": 1
+        },
+        {
+            "name": "ingenuity",
+            "value": 1
+        },
+        {
+            "name": "presence",
+            "value": 1
+        },
+        {
+            "name": "resolve",
+            "value": 1
+        },
+        {
+            "name": "strength",
+            "value": 1
+        }
+    ],
+    "Skills": [{
+            "name": "athletics",
+            "value": 0
+        },
+        {
+            "name": "medicine",
+            "value": 0
+        },
+        {
+            "name": "convince",
+            "value": 0
+        },
+        {
+            "name": "science",
+            "value": 0
+        }, {
+            "name": "craft",
+            "value": 0
+        },
+        {
+            "name": "subterfuge",
+            "value": 0
+        },
+        {
+            "name": "fighting",
+            "value": 0
+        },
+        {
+            "name": "survival",
+            "value": 0
+        },
+        {
+            "name": "knowledge",
+            "value": 0
+        },
+        {
+            "name": "technology",
+            "value": 0
+        },
+        {
+            "name": "marksman",
+            "value": 0
+        },
+        {
+            "name": "transport",
+            "value": 0
+        }
+    ],
+    "Traits": [{
+            "name": "Additional Limbs",
+            "type": [
+                "Minor Good"
+            ],
+            "needs": "Alien",
+            "disabled": true,
+            "multiple": true,
+            "charHas": false
+        },
+        {
+            "name": "Adversary",
+            "type": [
+                "Minor Bad",
+                "Major Bad"
+            ],
+            "multiple": true,
+            "charHas": false
+        },
+        {
+            "name": "Alien",
+            "type": [
+                "Special Good"
+            ],
+            "cost": {
+                "charPoints": -2
+            },
+            "charHas": false
+        },
+        {
+            "name": "Alien Appearance",
+            "type": [
+                "Special Bad"
+            ],
+            "cost": {
+                "charcter": 2,
+                "charPoints": 4
+            },
+            "needs": "Alien",
+            "disabled": true,
+            "charHas": false
+        },
+        {
+            "name": "Alien Senses",
+            "type": [
+                "Minor Good"
+            ],
+            "needs": "Alien",
+            "disabled": true,
+            "charHas": false
+        },
+        {
+            "name": "Alien Vortex",
+            "type": [
+                "Special Good"
+            ],
+            "needs": "Alien",
+            "disabled": true,
+            "cost": {
+                "charPoints": -8
+            },
+            "charHas": false
+        },
+        {
+            "name": "Amnesia",
+            "type": [
+                "Minor Bad",
+                "Major Bad"
+            ],
+            "charHas": false
+        },
+        {
+            "name": "Animal Friendship",
+            "type": [
+                "Minor Good"
+            ],
+            "charHas": false
+        },
+        {
+            "name": "Argumentative",
+            "type": [
+                "Minor Bad"
+            ],
+            "charHas": false
+        },
+        {
+            "name": "Armour",
+            "type": [
+                "Minor Good",
+                "Major Good",
+                "Special Good"
+            ],
+            "cost": {
+                "charPoints": -1
+            },
+            "needs": "Alien",
+            "disabled": true,
+            "charHas": false
+        },
+        {
+            "name": "Arrogant",
+            "type": [
+                "Minor Good"
+            ],
+            "charHas": false
+        },
+        {
+            "name": "Attractive",
+            "type": [
+                "Minor Good"
+            ],
+            "charHas": false
+        },
+        {
+            "name": "Authority",
+            "type": [
+                "Minor Good",
+                "Major Good"
+            ],
+            "charHas": false
+        },
+        {
+            "name": "Biochemical Genius",
+            "type": [
+                "Major Good"
+            ],
+            "charHas": false
+        },
+        {
+            "name": "Boffin",
+            "type": [
+                "Major Good"
+            ],
+            "charHas": false
+        },
+        {
+            "name": "Brave",
+            "type": [
+                "Minor Good"
+            ],
+            "charHas": false
+        },
+        {
+            "name": "By the Book",
+            "type": [
+                "Minor Bad"
+            ],
+            "charHas": false
+        },
+        {
+            "name": "Charming",
+            "type": [
+                "Minor Good"
+            ],
+            "charHas": false
+        },
+        {
+            "name": "Clairvoyance",
+            "type": [
+                "Special Good"
+            ],
+            "cost": {
+                "charPoints": -2
+            },
+            "needs": "Psychic",
+            "disabled": true,
+            "charHas": false
+        },
+        {
+            "name": "Climbing",
+            "type": [
+                "Minor Good",
+                "Major Good"
+            ],
+            "needs": "Alien",
+            "disabled": true,
+            "charHas": false
+        },
+        {
+            "name": "Clumsy",
+            "type": [
+                "Minor Bad"
+            ],
+            "charHas": false
+        },
+        {
+            "name": "Code Breaker",
+            "type": [
+                "Minor Good"
+            ],
+            "UNIT": true,
+            "charHas": false
+        },
+        {
+            "name": "Code of Conduct",
+            "type": [
+                "Minor Bad",
+                "Major Bad"
+            ],
+            "charHas": false
+        },
+        {
+            "name": "Cowardly",
+            "type": [
+                "Minor Bad"
+            ],
+            "charHas": false
+        },
+        {
+            "name": "Crack Shot",
+            "type": [
+                "Minor Good"
+            ],
+            "UNIT": true,
+            "charHas": false
+        },
+        {
+            "name": "Cutting Edge Technology",
+            "type": [
+                "Minor Good"
+            ],
+            "UNIT": true,
+            "charHas": false
+        },
+        {
+            "name": "Cyborg",
+            "type": [
+                "Special Good"
+            ],
+            "cost": {
+                "character1": -1,
+                "charPoints": -3
+            },
+            "charHas": false
+        },
+        {
+            "name": "Dark Secret",
+            "type": [
+                "Minor Bad",
+                "Major Bad"
+            ],
+            "charHas": false
+        },
+        {
+            "name": "Dependency",
+            "type": [
+                "Minor Bad",
+                "Major Bad"
+            ],
+            "charHas": false
+        },
+        {
+            "name": "Distinctive",
+            "type": [
+                "Minor Bad"
+            ],
+            "charHas": false
+        },
+        {
+            "name": "Eccentric",
+            "type": [
+                "Minor Bad",
+                "Major Bad"
+            ],
+            "charHas": false
+        },
+        {
+            "name": "Empathic",
+            "type": [
+                "Minor Good"
+            ],
+            "charHas": false
+        },
+        {
+            "name": "Enslaved",
+            "type": [
+                "Major Bad"
+            ],
+            "needs": "Alien",
+            "disabled": true,
+            "charHas": false
+        },
+        {
+            "name": "Environmental",
+            "type": [
+                "Minor Good",
+                "Major Good"
+            ],
+            "needs": "Alien",
+            "disabled": true,
+            "charHas": false
+        },
+        {
+            "name": "Experienced",
+            "type": [
+                "Special Good"
+            ],
+            "cost": {
+                "storyPoints": -3,
+                "skillPoints": 2,
+                "charPoints": 2
+            },
+            "multiple": true,
+            "charHas": false
+        },
+        {
+            "name": "Face in the Crowd",
+            "type": [
+                "Minor Good"
+            ],
+            "charHas": false
+        },
+        {
+            "name": "Fast Healing",
+            "type": [
+                "Major Good",
+                "Special Good"
+            ],
+            "cost": {
+                "charPoints": -6,
+                "storyPoints": -6
+            },
+            "charHas": false
+        },
+        {
+            "name": "Fear Factor",
+            "type": [
+                "Minor Good"
+            ],
+            "charHas": false
+        },
+        {
+            "name": "Fear Factor",
+            "type": [
+                "Special Good"
+            ],
+            "multiple": true,
+            "cost": {
+                "charPoints": -1
+            },
+            "charHas": false
+        },
+        {
+            "name": "Feel the Turn of the Universe",
+            "type": [
+                "Special Good"
+            ],
+            "cost": {
+                "charPoints": -1
+            },
+            "charHas": false
+        },
+        {
+            "name": "Five Rounds Rapid",
+            "type": [
+                "Major Good"
+            ],
+            "UNIT": true,
+            "charHas": false
+        },
+        {
+            "name": "Flight",
+            "type": [
+                "Minor Good",
+                "Major Good"
+            ],
+            "needs": "Alien",
+            "disabled": true,
+            "charHas": false
+        },
+        {
+            "name": "Forgetful",
+            "type": [
+                "Minor Bad"
+            ],
+            "charHas": false
+        },
+        {
+            "name": "Friends",
+            "type": [
+                "Minor Good",
+                "Major Good"
+            ],
+            "charHas": false
+        },
+        {
+            "name": "Hot Shot",
+            "type": [
+                "Minor Good"
+            ],
+            "UNIT": true,
+            "charHas": false
+        },
+        {
+            "name": "Hypnosis",
+            "type": [
+                "Minor Good",
+                "Major Good",
+                "Special Good"
+            ],
+            "cost": {
+                "charPoints": -3
+            },
+            "charHas": false
+        },
+        {
+            "name": "Immortal",
+            "needs": "Alien",
+            "disabled": true,
+            "multiple": true,
+            "type": [
+                "Major Good"
+            ],
+            "charHas": false
+        },
+        {
+            "name": "Immortal",
+            "type": [
+                "Major Good",
+                "Special Good"
+            ],
+            "cost": {
+                "charPoints": -5,
+                "storyPoints": -8
+            },
+            "charHas": false
+        },
+        {
+            "name": "Immunity",
+            "type": [
+                "Major Good"
+            ],
+            "needs": "Alien",
+            "disabled": true,
+            "charHas": false
+        },
+        {
+            "name": "Impaired Senses",
+            "type": [
+                "Minor Bad",
+                "Major Bad"
+            ],
+            "multiple": true,
+            "charHas": false
+        },
+        {
+            "name": "Impulsive",
+            "type": [
+                "Minor Bad"
+            ],
+            "charHas": false
+        },
+        {
+            "name": "Indomitable",
+            "type": [
+                "Major Good"
+            ],
+            "charHas": false
+        },
+        {
+            "name": "Inexperienced",
+            "type": [
+                "Special Bad"
+            ],
+            "cost": {
+                "charPoints": -2,
+                "skillPoints": -2,
+                "storyPoints": 3
+            },
+            "charHas": false
+        },
+        {
+            "name": "Insatiable Curiosity",
+            "type": [
+                "Minor Bad"
+            ],
+            "charHas": false
+        },
+        {
+            "name": "Keen Senses",
+            "type": [
+                "Minor Good",
+                "Major Good"
+            ],
+            "charHas": false
+        },
+        {
+            "name": "Last of my Kind",
+            "type": [
+                "Minor Bad"
+            ],
+            "needs": "Alien",
+            "disabled": true,
+            "charHas": false
+        },
+        {
+            "name": "Lucky",
+            "type": [
+                "Minor Good"
+            ],
+            "charHas": false
+        },
+        {
+            "name": "Military Rank",
+            "type": [
+                "Minor Good",
+                "Major Good"
+            ],
+            "multiple": true,
+            "charHas": false
+        },
+        {
+            "name": "Natural Weapons",
+            "needs": "Alien",
+            "disabled": true,
+            "type": [
+                "Minor Good",
+                "Major Good"
+            ],
+            "charHas": false
+        },
+        {
+            "name": "Networked",
+            "needs": "Alien",
+            "disabled": true,
+            "type": [
+                "Minor Good",
+                "Major Good"
+            ],
+            "charHas": false
+        },
+        {
+            "name": "Obligation",
+            "type": [
+                "Minor Bad",
+                "Major Bad"
+            ],
+            "charHas": false
+        },
+        {
+            "name": "Obsession",
+            "type": [
+                "Minor Bad",
+                "Major Bad"
+            ],
+            "charHas": false
+        },
+        {
+            "name": "Outcast",
+            "type": [
+                "Minor Bad"
+            ],
+            "charHas": false
+        },
+        {
+            "name": "Owed Favour",
+            "type": [
+                "Minor Good",
+                "Major Good"
+            ],
+            "multiple": true,
+            "charHas": false
+        },
+        {
+            "name": "Owes Favour",
+            "type": [
+                "Minor Bad",
+                "Major Bad"
+            ],
+            "multiple": true,
+            "charHas": false
+        },
+        {
+            "name": "Phobia",
+            "type": [
+                "Minor Bad"
+            ],
+            "multiple": true,
+            "charHas": false
+        },
+        {
+            "name": "Photographic Memory",
+            "type": [
+                "Major Good"
+            ],
+            "charHas": false
+        },
+        {
+            "name": "Possess",
+            "needs": "Alien",
+            "disabled": true,
+            "type": [
+                "Special Good"
+            ],
+            "charHas": false
+        },
+        {
+            "name": "Precognition",
+            "type": [
+                "Special Good"
+            ],
+            "cost": {
+                "charPoints": -1
+            },
+            "needs": "Psychic",
+            "disabled": true,
+            "charHas": false
+        },
+        {
+            "name": "Psychic",
+            "type": [
+                "Special Good"
+            ],
+            "cost": {
+                "character1": -1,
+                "charPoints": -2
+            },
+            "charHas": false
+        },
+        {
+            "name": "Psychic Training",
+            "type": [
+                "Minor Good"
+            ],
+            "charHas": false
+        },
+        {
+            "name": "Quick Reflexes",
+            "type": [
+                "Minor Good"
+            ],
+            "charHas": false
+        },
+        {
+            "name": "Replication",
+            "needs": "Alien",
+            "disabled": true,
+            "type": [
+                "Major Good"
+            ],
+            "charHas": false
+        },
+        {
+            "name": "Resistance",
+            "needs": "Alien",
+            "disabled": true,
+            "type": [
+                "Minor Good"
+            ],
+            "charHas": false
+        },
+        {
+            "name": "Resourceful Pockets",
+            "type": [
+                "Minor Good"
+            ],
+            "charHas": false
+        },
+        {
+            "name": "Reverse the Polarity of the Neutron Flow",
+            "type": [
+                "Major Good"
+            ],
+            "charHas": false
+        },
+        {
+            "name": "Robot",
+            "type": [
+                "Special Good"
+            ],
+            "cost": {
+                "character1": -2,
+                "charPoints": -4
+            },
+            "charHas": false
+        },
+        {
+            "name": "Run for your Life!",
+            "type": [
+                "Minor Good"
+            ],
+            "charHas": false
+        },
+        {
+            "name": "Screamer!",
+            "type": [
+                "Minor Good"
+            ],
+            "charHas": false
+        },
+        {
+            "name": "Selfish",
+            "type": [
+                "Minor Bad"
+            ],
+            "charHas": false
+        },
+        {
+            "name": "Sense of Direction",
+            "type": [
+                "Minor Good"
+            ],
+            "charHas": false
+        },
+        {
+            "name": "Shapeshift",
+            "needs": "Alien",
+            "disabled": true,
+            "type": [
+                "Minor Good",
+                "Major Good",
+                "Special Good"
+            ],
+            "cost": {
+                "charPoints": -4
+            },
+            "charHas": false
+        },
+        {
+            "name": "Sharpshooter",
+            "type": [
+                "Minor Good"
+            ],
+            "charHas": false
+        },
+        {
+            "name": "Slow Reflexes",
+            "type": [
+                "Minor Bad",
+                "Major Bad"
+            ],
+            "charHas": false
+        },
+        {
+            "name": "Special",
+            "needs": "Alien",
+            "disabled": true,
+            "type": [
+                "Special Good"
+            ],
+            "cost": {
+                "charPoints": -3
+            },
+            "charHas": false
+        },
+        {
+            "name": "Technically Adept",
+            "type": [
+                "Minor Good"
+            ],
+            "charHas": false
+        },
+        {
+            "name": "Technically Inept",
+            "type": [
+                "Minor Bad"
+            ],
+            "charHas": false
+        },
+        {
+            "name": "Telekinesis",
+            "type": [
+                "Special Good"
+            ],
+            "cost": {
+                "charPoints": -2
+            },
+            "needs": "Psychic",
+            "disabled": true,
+            "charHas": false
+        },
+        {
+            "name": "Telepathy",
+            "type": [
+                "Special Good"
+            ],
+            "cost": {
+                "charPoints": -1
+            },
+            "needs": "Psychic",
+            "disabled": true,
+            "charHas": false
+        },
+        {
+            "name": "Teleport",
+            "type": [
+                "Major Good"
+            ],
+            "needs": "Alien",
+            "disabled": true,
+            "charHas": false
+        },
+        {
+            "name": "Time Agent",
+            "type": [
+                "Special Good"
+            ],
+            "cost": {
+                "charPoints": -2,
+                "storyPoints": -2
+            },
+            "trait": "Vortex",
+            "charHas": false
+        },
+        {
+            "name": "Time Lord",
+            "type": [
+                "Special Good"
+            ],
+            "cost": {
+                "charPoints": -2,
+                "storyPoints": -4
+            },
+            "atribute": "Ingenuity 2",
+            "trait": [
+                "Vortex",
+                "Feel the Turn of the Universe"
+            ],
+            "charHas": false
+        },
+        {
+            "name": "Time Lord (Experienced)",
+            "type": [
+                "Special Good"
+            ],
+            "needs": "Time Lord",
+            "disabled": true,
+            "cost": {
+                "storyPoints": 4,
+                "charPoints": -1
+            },
+            "multiple": true,
+            "charHas": false
+        },
+        {
+            "name": "Time Traveller",
+            "type": [
+                "Minor Good",
+                "Major Good"
+            ],
+            "multiple": true,
+            "charHas": false
+        },
+        {
+            "name": "Tough",
+            "type": [
+                "Minor Good"
+            ],
+            "charHas": false
+        },
+        {
+            "name": "UNIT Veteran",
+            "type": [
+                "Special Good"
+            ],
+            "cost": {
+                "charPoints": -4
+            },
+            "charHas": false
+        },
+        {
+            "name": "Unadventurous",
+            "type": [
+                "Minor Bad",
+                "Major Bad"
+            ],
+            "charHas": false
+        },
+        {
+            "name": "Unattractive",
+            "type": [
+                "Minor Bad"
+            ],
+            "charHas": false
+        },
+        {
+            "name": "Unlucky",
+            "type": [
+                "Minor Bad"
+            ],
+            "charHas": false
+        },
+        {
+            "name": "Voice of Authority",
+            "type": [
+                "Minor Good"
+            ],
+            "charHas": false
+        },
+        {
+            "name": "Vortex",
+            "type": [
+                "Special Good"
+            ],
+            "cost": {
+                "charPoints": -1
+            },
+            "charHas": false
+        },
+        {
+            "name": "Wanted",
+            "type": [
+                "Minor Bad",
+                "Major Bad"
+            ],
+            "charHas": false
+        },
+        {
+            "name": "Weakness",
+            "type": [
+                "Minor Bad",
+                "Major Bad"
+            ],
+            "multiple": true,
+            "charHas": false
+        },
+        {
+            "name": "Wealthy",
+            "type": [
+                "Minor Good"
+            ],
+            "charHas": false
+        }
+    ]
+}
