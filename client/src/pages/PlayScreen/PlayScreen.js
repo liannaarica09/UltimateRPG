@@ -30,7 +30,7 @@ class PlayScreen extends React.Component {
     componentDidMount() {
         console.log(this.state.player);
 
-        axios.get('/api/users', {
+        axios.get('/api/users/', {
             params: {
                 userName: this.state.player
             }
