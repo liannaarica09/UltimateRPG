@@ -1,0 +1,6 @@
+# Don't track content of these folders
+node_modules/
+someOtherfoler/
+client/node_modules/
+C:\Users\Celia\Documents\GitHub\UltimateRPG\client\node_modules
+node_modules
