@@ -17,10 +17,6 @@ if (process.env.NODE_ENV === "production") {
     app.use(express.static("client/build"));
 }
 
-import { library } from '@fortawesome/fontawesome-svg-core';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMinusSquare, faPlusSquare } from '@fortawesome/free-solid-svg-icons';
-
 app.use(cors());
 
 // Add routes, both API and view
