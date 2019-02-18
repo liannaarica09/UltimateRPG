@@ -6,7 +6,7 @@ import Header from "../../components/header";
 import systems from "../../config/systems.json";
 import SystemItem from "../../components/SystemItem";
 import DropItem from "../../components/DropItem";
-// import { CharSheet, Attributes, Biodata, CharHeader, Skills, Stuff, Traits } from "../../components/CharSheet";
+import { CharSheet, Attributes, Biodata, CharHeader, Skills, Stuff, Traits } from "../../components/CharSheet";
 import "./PlayScreen.css";
 
 class PlayScreen extends React.Component {
@@ -128,7 +128,7 @@ class PlayScreen extends React.Component {
                         </Header>
                         <div className="center">
                             {this.state.character ? (
-                                {/* <CharSheet>
+                                <CharSheet>
                                     <CharHeader
                                         char={this.state.character} />
                                     <Attributes
@@ -168,7 +168,7 @@ class PlayScreen extends React.Component {
                                         })}
                                     </Traits>
                                     <Stuff />
-                                </CharSheet> */}
+                                </CharSheet>
                             ) : (
                                     <div>
                                         <h1>No Characters Found</h1>
