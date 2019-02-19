@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 export class Traits extends Component {
 
-    componentDidMount(){
+    componentDidMount() {
         console.log(this.props);
     }
     render() {

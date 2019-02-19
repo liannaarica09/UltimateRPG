@@ -21,6 +21,7 @@ class PlayScreen extends React.Component {
             traits: [],
             attributes: [],
             skills: [],
+            stuff: [],
             goal: "",
             personality: "",
             background: ""
@@ -62,18 +63,18 @@ class PlayScreen extends React.Component {
     handleCharChoice = (id) => {
         axios.get('/api/chars/' + id)
             .then(res => {
-                console.log(res.data.traits);
-                console.log(res.data.traits.length);
+                // console.log(res.data.traits);
+                // console.log(res.data.traits.length);
 
                 let tempTrait = [];
                 for (let j = 0; j < res.data.traits.length; j++) {
-                    console.log("index " + j);
-                    console.log(res.data.traits[j]);
-                    console.log(res.data.traits[j].charHas);
+                    // console.log("index " + j);
+                    // console.log(res.data.traits[j]);
+                    // console.log(res.data.traits[j].charHas);
                     if (res.data.traits[j].charHas) {
-                        console.log(res.data.traits[j].name);
+                        // console.log(res.data.traits[j].name);
                         tempTrait.push(res.data.traits[j]);
-                        console.log(tempTrait);
+                        // console.log(tempTrait);
                     }
                 }
 
@@ -83,10 +84,11 @@ class PlayScreen extends React.Component {
                     skills: res.data.skills,
                     attributes: res.data.attributes,
                     goal: res.data.goal,
+                    stuff: res.data.stuff,
                     personality: res.data.personality,
                     background: res.data.background
                 }, function () {
-                    console.log(this.state.traits);
+                    console.log(this.state);
                 });
             });
     };
@@ -167,7 +169,16 @@ class PlayScreen extends React.Component {
                                             )
                                         })}
                                     </Traits>
-                                    <Stuff />
+                                    <Stuff>
+                                        {this.state.stuff.map((thing, index) => {
+                                            return (
+                                                <div
+                                                    id={thing}
+                                                    key={thing + index}
+                                                    name={thing}>{thing}</div>
+                                            )
+                                        })}
+                                    </Stuff>
                                 </CharSheet>
                             ) : (
                                     <div>

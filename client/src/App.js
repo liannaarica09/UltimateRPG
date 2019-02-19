@@ -6,9 +6,9 @@ import CreateChar from "../src/pages/CreateChar";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './App.css';
 
-import { library } from '@fortawesome/fontawesome-svg-core';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMinusSquare, faPlusSquare } from '@fortawesome/free-solid-svg-icons';
+// import { library } from '@fortawesome/fontawesome-svg-core';
+// // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faMinusSquare, faPlusSquare } from '@fortawesome/free-solid-svg-icons';
 
 class App extends Component {
 
