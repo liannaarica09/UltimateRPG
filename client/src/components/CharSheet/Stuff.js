@@ -7,6 +7,7 @@ export class Stuff extends Component {
     render() {
         return (
             <div className="stuff">
+                <h3>Stuff</h3>
                 {this.props.children}
             </div>
         );

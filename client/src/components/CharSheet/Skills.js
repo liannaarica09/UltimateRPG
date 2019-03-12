@@ -5,6 +5,7 @@ export class Skills extends Component {
         return (
             <div className="skills">
                 <div>
+                    <h3>Skills</h3>
                     <p>Athletics {this.props.athletics}</p>
                     <p>Convince {this.props.convince}</p>
                     <p>Craft {this.props.craft}</p>

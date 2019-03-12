@@ -7,6 +7,7 @@ export class Attributes extends Component {
     render() {
         return (
             <div className="attributes">
+                <h3>Attributes</h3>
                 <p>Awareness {this.props.awareness}</p>
                 <p>Coordination {this.props.coordination}</p>
                 <p>Ingenuity {this.props.ingenuity}</p>

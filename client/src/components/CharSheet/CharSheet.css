@@ -1,0 +1,44 @@
+.charSheet div {
+    /* border: 1px red dashed; */
+    background: #fff;
+    border-radius: 15px;
+    border: 3px grey solid;
+}
+
+#charHeader {
+    grid-column: 1/5;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background: none;
+}
+
+.attributes {
+    grid-column: 1/2;
+}
+
+.skills {
+    grid-column: 2/3;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.biodata {
+    grid-column: 3/4;
+    grid-row: 2/span 2;
+}
+
+.trait {
+    grid-column: 1/2;
+}
+
+/* .stuff {
+    grid-column: 3/4;
+} */
+
+.charSheet {
+    padding: 20px;
+    grid-gap: 16px 16px;
+    display: grid;
+    grid-template-columns: 2fr 2fr 3fr;
+    grid-template-rows: auto;
+}

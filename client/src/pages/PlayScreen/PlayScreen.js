@@ -161,21 +161,21 @@ class PlayScreen extends React.Component {
                                     <Traits className="traits">
                                         {this.state.traits.map((trait, index) => {
                                             return (
-                                                <div
+                                                <p
                                                     id={trait.name}
                                                     key={trait.name + index}
                                                     name={trait.name}
-                                                >{trait.name}</div>
+                                                >{trait.name}</p>
                                             )
                                         })}
                                     </Traits>
                                     <Stuff>
                                         {this.state.stuff.map((thing, index) => {
                                             return (
-                                                <div
+                                                <p
                                                     id={thing}
                                                     key={thing + index}
-                                                    name={thing}>{thing}</div>
+                                                    name={thing}>{thing}</p>
                                             )
                                         })}
                                     </Stuff>

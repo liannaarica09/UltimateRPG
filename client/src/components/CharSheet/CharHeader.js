@@ -10,13 +10,13 @@ export class CharHeader extends Component {
 
     render() {
         return (
-            <div className="charHeader">
-                <div>
+            <div id="charHeader">
+                <h1>
                     {/* <FontAwesomeIcon icon={faEdit} onClick={this.addStuff} /> */}
                     Doctor Who
-                </div>
-                <div>{this.props.char}</div>
-                <div>Story Points 12</div>
+                </h1>
+                <h2>{this.props.char}</h2>
+                <h2>Story Points 12</h2>
             </div>
         );
     }

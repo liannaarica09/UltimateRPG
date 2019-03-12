@@ -7,7 +7,9 @@ export class Traits extends Component {
     }
     render() {
         return (
-            <div className="trait">{this.props.children}</div>
+            <div className="trait">
+                <h3>Traits</h3>
+                {this.props.children}</div>
         );
     }
 }

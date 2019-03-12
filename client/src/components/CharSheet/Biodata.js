@@ -4,6 +4,7 @@ export class Biodata extends Component {
     render() {
         return (
             <div className="biodata">
+                <h3>Biodata</h3>
                 <p>Personal Goal</p>
                 <p>{this.props.goal}</p>
                 <p>Personality</p>
