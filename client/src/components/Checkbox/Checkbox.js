@@ -8,7 +8,7 @@ class Checkbox extends React.Component {
 
     render() {
         return (
-            <div>{this.props.children}</div>
+            <div className="relative">{this.props.children}</div>
         )
     }
 }

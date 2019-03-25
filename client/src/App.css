@@ -58,3 +58,26 @@
   height: 75vh;
   overflow: scroll;
 }
+
+.hoverCont {
+  background-color: salmon;
+  padding: 15px;
+  border-radius: 35px;
+  z-index: 1;
+  position: absolute !important;
+  top: -9999px !important;
+  left: -9999px !important;
+}
+
+.hoverTrig:hover+.hoverCont {
+  position: absolute !important;
+  /* top: 50% !important;
+  left: 50% !important; */
+  top: 0px !important;
+  left: 0px !important;
+  transform: translate(-50%, -50%);
+}
+
+.relative {
+  position: relative;
+}

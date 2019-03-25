@@ -7,7 +7,7 @@ class Incrementer extends Component {
     render() {
         const name = this.props.name.charAt(0).toUpperCase() + this.props.name.substr(1);
         return (
-            <div id="incDiv">
+            <div id="incDiv" className="hoverTrig">
                 <p>{name}</p>
                 <div className="thirds">
                     <FontAwesomeIcon icon={faMinusSquare} onClick={() => this.props.handleClick(this.props.index, this.props.cat, '-')} />

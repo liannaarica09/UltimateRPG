@@ -8,6 +8,7 @@ import Traits from '../../config/traits.json';
 import Incrementer from "../../components/Incrementer/Incrementer";
 import Checkbox from "../../components/Checkbox";
 import Checks from "../../components/Checks";
+import Modal from "../../components/Modal";
 import { FontAwesomeIcon } from "../../../../node_modules/@fortawesome/react-fontawesome";
 import { faPlusCircle } from "../../../../node_modules/@fortawesome/free-solid-svg-icons";
 import Slider from "react-slick";
@@ -299,14 +300,19 @@ class CreateChar extends React.Component {
                             <div className="slide">
                                 <h3>Attributes</h3>
                                 {this.state.Attributes.attributes.map((attr, index) => (
-                                    <Incrementer
-                                        key={index}
-                                        index={index}
-                                        cat={'Attributes'}
-                                        name={attr.name}
-                                        handleClick={this.handleIncrement}
-                                        value={attr.value}
-                                    />
+                                    <div key={attr.name + index} className="relative">
+                                        <Incrementer
+                                            key={index}
+                                            index={index}
+                                            cat={'Attributes'}
+                                            name={attr.name}
+                                            handleClick={this.handleIncrement}
+                                            value={attr.value}
+                                        />
+                                        <Modal>
+                                            <p>{attr.description}</p>
+                                        </Modal>
+                                    </div>
                                 ))}
                             </div>
                         </div>
@@ -314,14 +320,20 @@ class CreateChar extends React.Component {
                             <div className="slide">
                                 <h3>Skills</h3>
                                 {this.state.Skills.skills.map((skill, index) => (
-                                    <Incrementer
-                                        key={index}
-                                        index={index}
-                                        cat={'Skills'}
-                                        name={skill.name}
-                                        handleClick={this.handleIncrement}
-                                        value={skill.value}
-                                    />
+                                    <div key={skill.name + index} className="relative">
+                                        <Incrementer
+
+                                            index={index}
+                                            cat={'Skills'}
+                                            name={skill.name}
+                                            handleClick={this.handleIncrement}
+                                            value={skill.value}
+                                        />
+                                        <Modal>
+                                            <p>{skill.description}</p>
+                                            <p>{skill.expertise}</p>
+                                        </Modal>
+                                    </div>
                                 ))}
                             </div>
                         </div>
@@ -338,7 +350,12 @@ class CreateChar extends React.Component {
                                                 cost={trait.cost}
                                                 handleCheck={this.handleCheck}>
 
-                                                <label>{trait.name}</label>
+                                                <label className="hoverTrig">{trait.name}</label>
+
+                                                <Modal>
+                                                    <p>{trait.description}</p>
+                                                    <p>{trait.effect}</p>
+                                                </Modal>
 
                                                 <Checks
                                                     needs={trait.needs}
