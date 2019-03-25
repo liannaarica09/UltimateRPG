@@ -1,6 +1,5 @@
 {
-    "attributes": [
-        {
+    "attributes": [{
             "name": "Awareness",
             "description": "Travelling the universe is a dangerous occupation, and you've really got to be aware of your surroundings. Whether it is spotting the object that has been disguised with a perception filer, or the Dalke Antibody that's just appearing round the corner, both use Awareness. Awareness takes into account anything that uses the five senses (sight, hearing, touch, smell, or taste), or even that indefinable sixth sense of just knowing that something is coming, senseing someone is looking at you, or talking behind your back. Awareness can be used to notice an enemy or look for clues.",
             "lvlOne": "Oblivious to the goings on around them. Their friends frequently have to stop them from stepping out into busy traffic, and they usually miss important clues or signs.",
@@ -9,7 +8,8 @@
             "lvlFour": "Above average, quick to notice when there is something wrong.",
             "lvlFive": "Perceptive, aware of everything going on, can read others like a book, gut feelings are rarely wrong.",
             "lvlSix": "Human maximum, incredibly rare. Takes in everything around them subconsciously, uncannily good at spotting clues. Able to read what people are really intending just by fluctiations in their voice, or notice the most minuscule details.",
-            "lvlSevenPlus": "Superhuman, possessing enhanced senses."
+            "lvlSevenPlus": "Superhuman, possessing enhanced senses.",
+            "value": 1
         },
         {
             "name": "Coordination",
@@ -20,7 +20,8 @@
             "lvlFour": "Above average, with an almost athletic ability with good reflexes and hand-eye coordination",
             "lvlFive": "Instinctive reactions, superior reflexes and best suited to professions where such abilities are key, such as pilots or racing drivers.",
             "lvlSix": "Human maximum, the quickest and most agile people on Earth.",
-            "lvlSevenPlus": "Superhuman, special characters or aliens who move and aim with pinpoint accuracy."
+            "lvlSevenPlus": "Superhuman, special characters or aliens who move and aim with pinpoint accuracy.",
+            "value": 1
         },
         {
             "name": "Ingenuity",
@@ -31,7 +32,8 @@
             "lvlFour": "Above average -- you're talking University graduates (from a real University) with a flexible mind that can adapt itself to many circumstances and capable of deducing whodunnit from a few clues, possible doe to some natural talent.",
             "lvlFive": "Well above average for a human, having a keen and penetrating mind that is full of useful general wisdom gained through a pursuit of knowledge, hard-earned practical experience and a natural gift towards applying their brains in novel ways.",
             "lvlSix": "The Human maximum and one of the keenest intellects on the planet, with truly open minds able to make incredible leaps of reason.",
-            "lvlSevenPlus": "Superhuman intelligence or alien characters, and remarkable minds such as the Doctor."
+            "lvlSevenPlus": "Superhuman intelligence or alien characters, and remarkable minds such as the Doctor.",
+            "value": 1
         },
         {
             "name": "Presence",
@@ -42,7 +44,8 @@
             "lvlFour": "Charming and commanding. People pay attention to them and take notice of what they're saying.",
             "lvlFive": "Silver-tongued or commanding, someone who can charm or boss their way through almost anything.",
             "lvlSix": "Awe-inspiring, regarded with respect, people want to be with them.",
-            "lvlSevenPlus": "Alien or superhuman characters, whose commanding and charismatic presence can sway minds and influence thoughts."
+            "lvlSevenPlus": "Alien or superhuman characters, whose commanding and charismatic presence can sway minds and influence thoughts.",
+            "value": 1
         },
         {
             "name": "Resolve",
@@ -53,7 +56,8 @@
             "lvlFour": "A strength of will above your average person, enduring hardships and willing to face injury or death for their personal convictions and beliefs.",
             "lvlFive": "Determined and resolute, at the peak of personal discipline and control, showing much stronger willpower than most people.",
             "lvlSix": "Paragon of virtue, morally immovable and able to resist almost any temptation or fear.",
-            "lvlSevenPlus": "Alien resolve, the most iron willed and unstoppable of aliens or superhuman characters."
+            "lvlSevenPlus": "Alien resolve, the most iron willed and unstoppable of aliens or superhuman characters.",
+            "value": 1
         },
         {
             "name": "Strength",
@@ -64,7 +68,8 @@
             "lvlFour": "Stronger than the average human.",
             "lvlFive": "The toughest athletes, sportsmen and women.",
             "lvlSix": "Human peak, capable of picking people up and throwing them over their heads. This srt of Strength is usually seen in proessional weightlifters or bodybuilders.",
-            "lvlSevenPlus": "Only for the specially enhanced characters or more-powerful aliens."
+            "lvlSevenPlus": "Only for the specially enhanced characters or more-powerful aliens.",
+            "value": 1
         }
     ]
 }

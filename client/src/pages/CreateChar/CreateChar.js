@@ -2,9 +2,9 @@ import React from "react";
 import { Redirect } from 'react-router-dom';
 import axios from 'axios';
 import Vortex from '../../config/vortex.json'
-import Skills from '../../config/skills.JSON';
-import Attributes from '../../config/attributes.JSON';
-import Traits from '../../config/traits.JSON';
+import Skills from '../../config/skills.json';
+import Attributes from '../../config/attributes.json';
+import Traits from '../../config/traits.json';
 import Incrementer from "../../components/Incrementer/Incrementer";
 import Checkbox from "../../components/Checkbox";
 import Checks from "../../components/Checks";
@@ -59,25 +59,25 @@ class CreateChar extends React.Component {
 
     handleIncrement = (i, cat, op) => {
         console.log(cat);
+        console.log(i);
 
-        let vortex = this.state.Vortex;
         let attributes = this.state.Attributes;
-        let traits = this.state.Traits;
         let skills = this.state.Skills;
 
         if (cat === 'Attributes') {
             switch (op) {
                 case '+':
-                    console.log(vortex.Attributes[i].value);
-                    vortex.Attributes[i].value = vortex.Attributes[i].value + 1;
+                    console.log(attributes.attributes[i].value);
+                    attributes.attributes[i].value = attributes.attributes[i].value + 1;
                     this.setState({ charPoints: this.state.charPoints - 1 });
-                    console.log(vortex.Attributes[i].value);
+                    console.log(attributes.attributes[i].name);
+                    console.log(attributes.attributes[i].value);
                     break;
                 case '-':
-                    console.log(vortex.Attributes[i].value);
-                    vortex.Attributes[i].value = vortex.Attributes[i].value - 1;
+                    console.log(attributes.attributes[i].value);
+                    attributes.attributes[i].value = attributes.attributes[i].value - 1;
                     this.setState({ charPoints: this.state.charPoints + 1 });
-                    console.log(vortex.Attributes[i].value);
+                    console.log(attributes.attributes[i].value);
                     break;
                 default:
                     break;
@@ -86,23 +86,23 @@ class CreateChar extends React.Component {
         if (cat === 'Skills') {
             switch (op) {
                 case '+':
-                    console.log(vortex.Skills[i].value);
-                    vortex.Skills[i].value = vortex.Skills[i].value + 1;
+                    console.log(skills.skills[i].value);
+                    skills.skills[i].value = skills.skills[i].value + 1;
                     this.setState({ skillPoints: this.state.skillPoints - 1 });
-                    console.log(vortex.Skills[i].value);
+                    console.log(skills.skills[i].value);
                     break;
                 case '-':
-                    console.log(vortex.Skills[i].value);
-                    vortex.Skills[i].value = vortex.Skills[i].value - 1;
+                    console.log(skills.skills[i].value);
+                    skills.skills[i].value = skills.skills[i].value - 1;
                     this.setState({ skillPoints: this.state.skillPoints + 1 });
-                    console.log(vortex.Skills[i].value);
+                    console.log(skills.skills[i].value);
                     break;
                 default:
                     break;
             }
         }
-
-        this.setState({ Vortex: vortex });
+        this.setState({ Attributes: attributes });
+        this.setState({ Skills: skills });
     }
 
     handleCharCreation = (event) => {
@@ -110,8 +110,8 @@ class CreateChar extends React.Component {
 
         axios.post('/api/chars', {
             name: this.state.charName,
-            attributes: this.state.Vortex.Attributes,
-            skills: this.state.Vortex.Skills,
+            attributes: this.state.Attributes,
+            skills: this.state.Skills,
             traits: this.state.Vortex.Traits,
             stuff: this.state.stuff,
             goal: this.state.goal,
@@ -286,7 +286,7 @@ class CreateChar extends React.Component {
                         <div>
                             <div className="slide">
                                 <h3>Attributes</h3>
-                                {this.state.Vortex.Attributes.map((attr, index) => (
+                                {this.state.Attributes.attributes.map((attr, index) => (
                                     <Incrementer
                                         key={index}
                                         index={index}
@@ -301,7 +301,7 @@ class CreateChar extends React.Component {
                         <div>
                             <div className="slide">
                                 <h3>Skills</h3>
-                                {this.state.Vortex.Skills.map((skill, index) => (
+                                {this.state.Skills.skills.map((skill, index) => (
                                     <Incrementer
                                         key={index}
                                         index={index}
