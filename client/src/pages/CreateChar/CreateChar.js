@@ -132,6 +132,7 @@ class CreateChar extends React.Component {
         console.log(event.target);
 
         let vortex = this.state.Vortex;
+        let traits = this.state.Traits;
         const name = event.target.name;
         const value = event.target.checked;
         const parentIndex = event.target.getAttribute('parent-index');
@@ -141,81 +142,92 @@ class CreateChar extends React.Component {
         });
 
         console.log(parentIndex);
-        console.log(vortex.Traits[parentIndex].name);
-        console.log(vortex.Traits[parentIndex].charHas);
-        vortex.Traits[parentIndex].charHas = value;
-        console.log(vortex.Traits[parentIndex].charHas);
+        console.log(traits.traits[parentIndex].name);
+        console.log(traits.traits[parentIndex].has);
+        traits.traits[parentIndex].has = value;
+        console.log(traits.traits[parentIndex].has);
         this.setState({
             Vortex: vortex
         }, function () {
-            console.log(this.state.Vortex.Traits[parentIndex].name);
-            console.log(this.state.Vortex.Traits[parentIndex].charHas);
+            console.log(this.state.Traits.traits[parentIndex].name);
         });
 
-        if (name === "Alien" || name === "Psychic" || name === "Time Lord") {
-            console.log(name);
-            alert("this trait is not available yet.");
+        if (value === true) {
+            console.log("checked");
+            console.log(this.state.Traits.traits[parentIndex].cost);
+            this.setState({
+                charPoints: this.state.charPoints - this.state.Traits.traits[parentIndex].cost
+            })
+        } else {
+            this.setState({
+                charPoints: this.state.charPoints + this.state.Traits.traits[parentIndex].cost
+            })
         }
 
-        if (name === "Minor Good") {
-            if (value === true) {
-                this.setState({
-                    charPoints: this.state.charPoints - 1
-                });
-            } else {
-                this.setState({
-                    charPoints: this.state.charPoints + 1
-                })
-            }
-        } else if (name === "Minor Bad") {
-            if (value === true) {
-                this.setState({
-                    charPoints: this.state.charPoints + 1
-                });
-            } else {
-                this.setState({
-                    charPoints: this.state.charPoints - 1
-                })
-            }
-        } else if (name === "Major Good") {
-            if (value === true) {
-                this.setState({
-                    charPoints: this.state.charPoints - 2
-                });
-            } else {
-                this.setState({
-                    charPoints: this.state.charPoints + 2
-                })
-            }
-        } else if (name === "Major Bad") {
-            if (value === true) {
-                this.setState({
-                    charPoints: this.state.charPoints + 2
-                });
-            } else {
-                this.setState({
-                    charPoints: this.state.charPoints - 2
-                })
-            }
-        } else if (name === "Special Good" || name === "Special Bad") {
+        // if (name === "Alien" || name === "Psychic" || name === "Time Lord") {
+        //     console.log(name);
+        //     alert("this trait is not available yet.");
+        // }
 
-            if (this.state.Vortex.Traits[parentIndex].cost) {
-                const cost = this.state.Vortex.Traits[parentIndex].cost;
-                console.log(Object.keys(cost));
+        // if (name === "Minor Good") {
+        //     if (value === true) {
+        //         this.setState({
+        //             charPoints: this.state.charPoints - 1
+        //         });
+        //     } else {
+        //         this.setState({
+        //             charPoints: this.state.charPoints + 1
+        //         })
+        //     }
+        // } else if (name === "Minor Bad") {
+        //     if (value === true) {
+        //         this.setState({
+        //             charPoints: this.state.charPoints + 1
+        //         });
+        //     } else {
+        //         this.setState({
+        //             charPoints: this.state.charPoints - 1
+        //         })
+        //     }
+        // } else if (name === "Major Good") {
+        //     if (value === true) {
+        //         this.setState({
+        //             charPoints: this.state.charPoints - 2
+        //         });
+        //     } else {
+        //         this.setState({
+        //             charPoints: this.state.charPoints + 2
+        //         })
+        //     }
+        // } else if (name === "Major Bad") {
+        //     if (value === true) {
+        //         this.setState({
+        //             charPoints: this.state.charPoints + 2
+        //         });
+        //     } else {
+        //         this.setState({
+        //             charPoints: this.state.charPoints - 2
+        //         })
+        //     }
+        // } else if (name === "Special Good" || name === "Special Bad") {
 
-                Object.keys(cost).forEach(pointType => {
-                    console.log(parseFloat(cost[pointType]));
-                    console.log(this.state[pointType]);
+        //     if (this.state.Vortex.Traits[parentIndex].cost) {
+        //         const cost = this.state.Vortex.Traits[parentIndex].cost;
+        //         console.log(Object.keys(cost));
 
-                    this.setState({
-                        [pointType]: this.state[pointType] + cost[pointType]
-                    });
-                });
-            } else {
-                console.log("No cost available");
-                alert("this trait is not available yet.");
-            }
-        }
+        //         Object.keys(cost).forEach(pointType => {
+        //             console.log(parseFloat(cost[pointType]));
+        //             console.log(this.state[pointType]);
+
+        //             this.setState({
+        //                 [pointType]: this.state[pointType] + cost[pointType]
+        //             });
+        //         });
+        //     } else {
+        //         console.log("No cost available");
+        //         alert("this trait is not available yet.");
+        //     }
+        // }
     }
 
     addStuff = () => {
@@ -318,32 +330,23 @@ class CreateChar extends React.Component {
                                 <h3>Traits</h3>
 
                                 <div>
-                                    {this.state.Vortex.Traits.map((trait, index) => {
+                                    {this.state.Traits.traits.map((trait, index) => {
                                         return (
                                             <Checkbox
                                                 key={trait.name + index}
                                                 name={trait.name}
-                                                needs={trait.needs}
-                                                disabled={trait.disabled}
                                                 cost={trait.cost}
                                                 handleCheck={this.handleCheck}>
 
-                                                <label className="whiteText">{trait.name}</label>
-                                                {trait.type.map((type, i) => {
-                                                    return (
-                                                        <div key={type + i.toString() + trait.name}>
-                                                            <label>{type}</label>
-                                                            <Checks
-                                                                index={i}
-                                                                needs={trait.needs}
-                                                                cat={'Traits'}
-                                                                parent={trait.name}
-                                                                parentIndex={index}
-                                                                name={type}
-                                                                cost={trait.cost}
-                                                                handleChange={this.handleCheck} />
-                                                        </div>)
-                                                })}
+                                                <label>{trait.name}</label>
+
+                                                <Checks
+                                                    needs={trait.needs}
+                                                    cat={'Traits'}
+                                                    parent={trait.name}
+                                                    parentIndex={index}
+                                                    cost={trait.cost}
+                                                    handleChange={this.handleCheck} />
                                             </Checkbox>
                                         )
                                     })}

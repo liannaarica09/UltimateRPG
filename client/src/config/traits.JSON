@@ -1,6 +1,5 @@
 {
-    "traits": [
-        {
+    "traits": [{
             "name": "Animal Friendship",
             "designation": "good",
             "level": "minor",
