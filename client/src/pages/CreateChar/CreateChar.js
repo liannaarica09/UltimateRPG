@@ -2,6 +2,9 @@ import React from "react";
 import { Redirect } from 'react-router-dom';
 import axios from 'axios';
 import Vortex from '../../config/vortex.json'
+import Skills from '../../config/skills.JSON';
+import Attributes from '../../config/attributes.JSON';
+import Traits from '../../config/traits.JSON';
 import Incrementer from "../../components/Incrementer/Incrementer";
 import Checkbox from "../../components/Checkbox";
 import Checks from "../../components/Checks";
@@ -21,7 +24,10 @@ class CreateChar extends React.Component {
             personality: "",
             background: "",
             tempStuff: "",
-            Vortex
+            Vortex,
+            Attributes,
+            Skills,
+            Traits
         }
     }
 
@@ -55,6 +61,9 @@ class CreateChar extends React.Component {
         console.log(cat);
 
         let vortex = this.state.Vortex;
+        let attributes = this.state.Attributes;
+        let traits = this.state.Traits;
+        let skills = this.state.Skills;
 
         if (cat === 'Attributes') {
             switch (op) {
