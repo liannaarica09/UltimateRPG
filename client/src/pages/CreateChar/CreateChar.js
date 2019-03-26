@@ -113,7 +113,7 @@ class CreateChar extends React.Component {
             name: this.state.charName,
             attributes: this.state.Attributes,
             skills: this.state.Skills,
-            traits: this.state.Vortex.Traits,
+            traits: this.state.Traits,
             stuff: this.state.stuff,
             goal: this.state.goal,
             personality: this.state.personality,

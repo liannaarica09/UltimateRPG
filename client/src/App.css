@@ -56,10 +56,12 @@
 
 .slick-list {
   height: 75vh;
-  overflow: scroll;
+  overflow-x: scroll;
+  overflow-y: auto;
 }
 
 .hoverCont {
+  height: 200%;
   background-color: salmon;
   padding: 15px;
   border-radius: 35px;
@@ -67,15 +69,23 @@
   position: absolute !important;
   top: -9999px !important;
   left: -9999px !important;
+  overflow: scroll;
 }
 
 .hoverTrig:hover+.hoverCont {
-  position: absolute !important;
   /* top: 50% !important;
   left: 50% !important; */
   top: 0px !important;
   left: 0px !important;
   transform: translate(-50%, -50%);
+  overflow: scroll;
+}
+
+.hoverCont:hover {
+  top: 0px !important;
+  left: 0px !important;
+  transform: translate(-50%, -50%);
+  overflow: scroll;
 }
 
 .relative {
