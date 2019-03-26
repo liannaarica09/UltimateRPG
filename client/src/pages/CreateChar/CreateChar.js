@@ -241,6 +241,17 @@ class CreateChar extends React.Component {
         })
     }
 
+    handleLogout = () => {
+        localStorage.removeItem("currentSystem");
+        localStorage.removeItem("userName");
+        localStorage.removeItem("token");
+        this.props.history.push("/");
+    }
+
+    handleHome = () => {
+        this.props.history.push("/");
+    };
+
     render() {
         if (!localStorage.getItem('currentSystem')) {
             return <Redirect to={'/play'} />
@@ -285,6 +296,10 @@ class CreateChar extends React.Component {
 
         return (
             <div className="pagePadding">
+                <header>
+                    <div className="dropItem" onClick={this.handleHome}>Home</div>
+                    <div className="dropItem" onClick={this.handleLogout}>Logout</div>
+                </header>
                 <div className="thirds">
                     <div><p>Character Points</p>  {this.state.charPoints}</div>
                     <div><p>Skill Points</p> {this.state.skillPoints}</div>
