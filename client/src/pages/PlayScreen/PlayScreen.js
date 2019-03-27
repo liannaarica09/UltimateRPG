@@ -63,8 +63,7 @@ class PlayScreen extends React.Component {
     handleCharChoice = (id) => {
         axios.get('/api/chars/' + id)
             .then(res => {
-                // console.log(res.data.traits);
-                // console.log(res.data.traits.length);
+                console.log(res.data.attributes[0].attributes);
 
                 let tempTrait = [];
                 for (let j = 0; j < res.data.traits.length; j++) {
@@ -88,7 +87,7 @@ class PlayScreen extends React.Component {
                     personality: res.data.personality,
                     background: res.data.background
                 }, function () {
-                    console.log(this.state);
+                    console.log(this.state.attributes);
                 });
             });
     };
@@ -134,25 +133,25 @@ class PlayScreen extends React.Component {
                                     <CharHeader
                                         char={this.state.character} />
                                     <Attributes
-                                        awareness={this.state.attributes[0].value}
-                                        coordination={this.state.attributes[1].value}
-                                        ingenuity={this.state.attributes[2].value}
-                                        presence={this.state.attributes[3].value}
-                                        resolve={this.state.attributes[4].value}
-                                        strength={this.state.attributes[5].value} />
+                                        awareness={this.state.attributes[0].attributes[0].value}
+                                        coordination={this.state.attributes[0].attributes[1].value}
+                                        ingenuity={this.state.attributes[0].attributes[2].value}
+                                        presence={this.state.attributes[0].attributes[3].value}
+                                        resolve={this.state.attributes[0].attributes[4].value}
+                                        strength={this.state.attributes[0].attributes[5].value} />
                                     <Skills
-                                        athletics={this.state.skills[0].value}
-                                        medicine={this.state.skills[1].value}
-                                        convince={this.state.skills[2].value}
-                                        science={this.state.skills[3].value}
-                                        craft={this.state.skills[4].value}
-                                        subterfuge={this.state.skills[5].value}
-                                        fighting={this.state.skills[6].value}
-                                        survival={this.state.skills[7].value}
-                                        knowledge={this.state.skills[8].value}
-                                        technology={this.state.skills[9].value}
-                                        marksman={this.state.skills[10].value}
-                                        transport={this.state.skills[11].value} />
+                                        athletics={this.state.skills[0].skills[0].value}
+                                        medicine={this.state.skills[0].skills[1].value}
+                                        convince={this.state.skills[0].skills[2].value}
+                                        science={this.state.skills[0].skills[3].value}
+                                        craft={this.state.skills[0].skills[4].value}
+                                        subterfuge={this.state.skills[0].skills[5].value}
+                                        fighting={this.state.skills[0].skills[6].value}
+                                        survival={this.state.skills[0].skills[7].value}
+                                        knowledge={this.state.skills[0].skills[8].value}
+                                        technology={this.state.skills[0].skills[9].value}
+                                        marksman={this.state.skills[0].skills[10].value}
+                                        transport={this.state.skills[0].skills[11].value} />
                                     <Biodata
                                         goal={this.state.goal}
                                         personality={this.state.personality}

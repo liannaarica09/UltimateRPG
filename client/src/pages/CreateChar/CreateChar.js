@@ -32,6 +32,9 @@ class CreateChar extends React.Component {
         }
     }
 
+    defaultImage = './images/imagebot.png';
+    choseImage = false;
+
     componentDidMount() {
         console.log(localStorage.getItem('currentSystem'));
 
@@ -120,8 +123,8 @@ class CreateChar extends React.Component {
             background: this.state.background,
             user: localStorage.getItem('userName'),
             gameSystem: this.state.gameSystem,
+            image: this.choseImage ? this.image : this.defaultImage,
             gMaster: "liannaarica09"
-            // image: this.choseImage ? this.image : this.defaultImage
         }).then(res => {
             console.log(JSON.parse(res.config.data));
             this.props.history.push("/play");
@@ -239,6 +242,23 @@ class CreateChar extends React.Component {
         this.setState({
             stuff: tempArray
         })
+    }
+
+    previewFile = () => {
+        this.choseImage = true;
+        var preview = document.querySelector('#preview');
+        var file = document.querySelector('input[type=file]').files[0];
+        var reader = new FileReader();
+
+        reader.addEventListener("load", () => {
+            preview.src = reader.result;
+            this.image = reader.result
+
+        }, false);
+
+        if (file) {
+            reader.readAsDataURL(file);
+        }
     }
 
     handleLogout = () => {
@@ -408,6 +428,11 @@ class CreateChar extends React.Component {
                                 <textarea name="personality" id="personality" cols="30" rows="10" onChange={(e) => this.onChange(e, 'personality')}></textarea>
                                 <p>Background</p>
                                 <textarea name="background" id="background" cols="30" rows="10" onChange={(e) => this.onChange(e, 'background')}></textarea>
+                                <p>Portrait:</p>
+                                <img id="preview" alt="placeholder" src="http://via.placeholder.com/150x150" />
+                                <input onChange={this.previewFile} type="file"
+                                    id="avatar" name="image"
+                                    accept="image/png, image/jpeg" />
                             </div>
                         </div>
                     </Slider>
