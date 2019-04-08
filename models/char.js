@@ -12,7 +12,8 @@ const charSchema = new Schema({
     background: { type: String, required: true },
     gameSystem: { type: String, required: true },
     user: { type: String, required: true },
-    gMaster: { type: String }
+    gMaster: { type: String },
+    image: { type: String }
 });
 
 const Char = mongoose.model("Char", charSchema);

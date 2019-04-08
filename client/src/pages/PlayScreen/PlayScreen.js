@@ -24,7 +24,9 @@ class PlayScreen extends React.Component {
             stuff: [],
             goal: "",
             personality: "",
-            background: ""
+            background: "",
+            url: ""
+
         }
     }
 
@@ -85,7 +87,8 @@ class PlayScreen extends React.Component {
                     goal: res.data.goal,
                     stuff: res.data.stuff,
                     personality: res.data.personality,
-                    background: res.data.background
+                    background: res.data.background,
+                    url: res.data.image
                 }, function () {
                     console.log(this.state.attributes);
                 });
@@ -156,6 +159,7 @@ class PlayScreen extends React.Component {
                                         goal={this.state.goal}
                                         personality={this.state.personality}
                                         background={this.state.background}
+                                        url={this.state.url}
                                     />
                                     <Traits className="traits">
                                         {this.state.traits.map((trait, index) => {

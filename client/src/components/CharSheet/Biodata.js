@@ -5,6 +5,8 @@ export class Biodata extends Component {
         return (
             <div className="biodata">
                 <h3>Biodata</h3>
+                <p>Portrait</p>
+                <img src={this.props.url}></img>
                 <p>Personal Goal</p>
                 <p>{this.props.goal}</p>
                 <p>Personality</p>

@@ -123,10 +123,11 @@ class CreateChar extends React.Component {
             background: this.state.background,
             user: localStorage.getItem('userName'),
             gameSystem: this.state.gameSystem,
-            image: this.choseImage ? this.image : this.defaultImage,
-            gMaster: "liannaarica09"
+            gMaster: "liannaarica09",
+            image: this.choseImage ? this.image : this.defaultImage
         }).then(res => {
-            console.log(JSON.parse(res.config.data));
+            console.log(this);
+            console.log(JSON.parse(res.data));
             this.props.history.push("/play");
         })
     }
@@ -167,71 +168,6 @@ class CreateChar extends React.Component {
                 charPoints: this.state.charPoints + this.state.Traits.traits[parentIndex].cost
             })
         }
-
-        // if (name === "Alien" || name === "Psychic" || name === "Time Lord") {
-        //     console.log(name);
-        //     alert("this trait is not available yet.");
-        // }
-
-        // if (name === "Minor Good") {
-        //     if (value === true) {
-        //         this.setState({
-        //             charPoints: this.state.charPoints - 1
-        //         });
-        //     } else {
-        //         this.setState({
-        //             charPoints: this.state.charPoints + 1
-        //         })
-        //     }
-        // } else if (name === "Minor Bad") {
-        //     if (value === true) {
-        //         this.setState({
-        //             charPoints: this.state.charPoints + 1
-        //         });
-        //     } else {
-        //         this.setState({
-        //             charPoints: this.state.charPoints - 1
-        //         })
-        //     }
-        // } else if (name === "Major Good") {
-        //     if (value === true) {
-        //         this.setState({
-        //             charPoints: this.state.charPoints - 2
-        //         });
-        //     } else {
-        //         this.setState({
-        //             charPoints: this.state.charPoints + 2
-        //         })
-        //     }
-        // } else if (name === "Major Bad") {
-        //     if (value === true) {
-        //         this.setState({
-        //             charPoints: this.state.charPoints + 2
-        //         });
-        //     } else {
-        //         this.setState({
-        //             charPoints: this.state.charPoints - 2
-        //         })
-        //     }
-        // } else if (name === "Special Good" || name === "Special Bad") {
-
-        //     if (this.state.Vortex.Traits[parentIndex].cost) {
-        //         const cost = this.state.Vortex.Traits[parentIndex].cost;
-        //         console.log(Object.keys(cost));
-
-        //         Object.keys(cost).forEach(pointType => {
-        //             console.log(parseFloat(cost[pointType]));
-        //             console.log(this.state[pointType]);
-
-        //             this.setState({
-        //                 [pointType]: this.state[pointType] + cost[pointType]
-        //             });
-        //         });
-        //     } else {
-        //         console.log("No cost available");
-        //         alert("this trait is not available yet.");
-        //     }
-        // }
     }
 
     addStuff = () => {
@@ -245,19 +181,25 @@ class CreateChar extends React.Component {
     }
 
     previewFile = () => {
+        console.log("preview started");
         this.choseImage = true;
         var preview = document.querySelector('#preview');
-        var file = document.querySelector('input[type=file]').files[0];
+        console.log(document.getElementById('avatar').files);
+        var file = document.getElementById('avatar').files[0];
         var reader = new FileReader();
+        console.log(file);
 
         reader.addEventListener("load", () => {
+            console.log("reader load event")
             preview.src = reader.result;
             this.image = reader.result
+            console.log(this.image);
 
         }, false);
 
         if (file) {
             reader.readAsDataURL(file);
+            console.log(this.image);
         }
     }
 
@@ -343,10 +285,8 @@ class CreateChar extends React.Component {
                                             name={attr.name}
                                             handleClick={this.handleIncrement}
                                             value={attr.value}
+                                            description={attr.description}
                                         />
-                                        <Modal>
-                                            <p>{attr.description}</p>
-                                        </Modal>
                                     </div>
                                 ))}
                             </div>
@@ -363,11 +303,8 @@ class CreateChar extends React.Component {
                                             name={skill.name}
                                             handleClick={this.handleIncrement}
                                             value={skill.value}
+                                            description={skill.description}
                                         />
-                                        <Modal>
-                                            <p>{skill.description}</p>
-                                            <p>{skill.expertise}</p>
-                                        </Modal>
                                     </div>
                                 ))}
                             </div>
@@ -430,8 +367,8 @@ class CreateChar extends React.Component {
                                 <textarea name="background" id="background" cols="30" rows="10" onChange={(e) => this.onChange(e, 'background')}></textarea>
                                 <p>Portrait:</p>
                                 <img id="preview" alt="placeholder" src="http://via.placeholder.com/150x150" />
-                                <input onChange={this.previewFile} type="file"
-                                    id="avatar" name="image"
+                                <input type="file" onChange={this.previewFile}
+                                    id="avatar" name="avatar"
                                     accept="image/png, image/jpeg" />
                             </div>
                         </div>
