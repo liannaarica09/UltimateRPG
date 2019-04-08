@@ -68,13 +68,12 @@ class PlayScreen extends React.Component {
                 console.log(res.data.attributes[0].attributes);
 
                 let tempTrait = [];
-                for (let j = 0; j < res.data.traits.length; j++) {
-                    // console.log("index " + j);
-                    // console.log(res.data.traits[j]);
-                    // console.log(res.data.traits[j].charHas);
-                    if (res.data.traits[j].charHas) {
-                        // console.log(res.data.traits[j].name);
-                        tempTrait.push(res.data.traits[j]);
+                for (let j = 0; j < res.data.traits[0].traits.length; j++) {
+                    console.log("index " + j);
+                    console.log(res.data.traits[0].traits[j]);
+                    if (res.data.traits[0].traits[j].has) {
+                        console.log(res.data.traits[0].traits[j].name);
+                        tempTrait.push(res.data.traits[0].traits[j]);
                         // console.log(tempTrait);
                     }
                 }
